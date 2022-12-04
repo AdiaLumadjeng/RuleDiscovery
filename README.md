@@ -22,9 +22,7 @@ This [notebook](RuleDiscovery.ipynb) illustrates how to use RUX and RUG.
 
  `conda activate rulediscovery`
 
- 4. Check whether the installation works:
-
- `python RUX_RUG_tests.py`
+ 4. Check whether the installation works with the either of the following test files.
 
 ---
 
@@ -35,3 +33,15 @@ it. The solver is freely available for academic use. Check the
 [related
 page](https://www.gurobi.com/academia/academic-program-and-licenses/)
 on Gurobi's website.
+
+--
+## Testing the code
+The code contains the following files to reproduce the results of our manuscript:
+ 1. `ruxg_testing.py`
+
+ 2. `fairruxg_testing.py` is used to test the FairRUX and FairRUG algorithms for the eight datasets COMPAS, adult, default, law, attrition, recruitment, student and nursery. To reproduce the results of Table EC.5 in our manuscript, the tests are run with `randomState=21`, `maxDepth=3`, `numEstimators=100` and we set the value of `fairness_eps` to 0 for COMPAS, adult and default, 0.01 for attrition, recruitment and student, and 0.025 for law and nursery. Running the file should immediately start the 10-fold cross validation and write the results to .txt files in the folder FairnessResults (link).
+
+ 3. `LoanCase`
+
+ 4. `COMPASCase`
+
